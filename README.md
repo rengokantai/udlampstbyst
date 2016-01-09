@@ -46,4 +46,51 @@ ReWriteEngine On
 RewriteRule ^([^.]+)/?$  /index.php?name=$1 [L,QSA]
 ```
 
+3-4
+edit php.ini  (in /etc folder)
+```
+short_optn_tag =on
+```
+
+3-5
+install google pagespeed
+```
+yum install at
+rpm -Uvh ...pagespeed.rpm
+/etc/init.d/httpd restart
+```
+
+3-6
+php-gd (image thumbnails)
+```
+yum install php-gd
+/etc/init.d/httpd restart
+```
+
+
+
+3-7
+setting permissions to upload dict
+```
+chgrp apache /var/www/html/upload(images)
+chmod 777 /var/www/html/upload(images)
+chown apache /var/www/html/upload(images)
+sudo /etc/init.d/httpd restart
+```
+3-8
+```
+yum install mod_ssl
+chown ec2-user /etc/httpd/conf.d
+chown ec2-user /etc/pki/tls/certs
+```
+edit ssl.conf
+```
+```
+4-1
+Go to godaddy, select domain, Add new ->
+Record type : A
+host:@
+Point to: elastic ip
+
+
 
