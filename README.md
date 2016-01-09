@@ -92,5 +92,15 @@ Record type : A
 host:@
 Point to: elastic ip
 
+6-1
+modify .htaccess to enable multiple host access
+```
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include_file .(html?|txt|css|js|php)$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
 
 
